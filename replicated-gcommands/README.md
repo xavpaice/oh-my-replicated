@@ -12,3 +12,26 @@ Add the following to your `.zprofile`, replacing with your email user name.
 ```zsh
 export GUSER=<replicated-email-user-name>
 ```
+
+Note: You will need to have gcloud installed, on macOS you can do this with [brew](https://formulae.brew.sh/cask/google-cloud-sdk) `brew install --cask google-cloud-sdk`
+
+Example Usage:
+```zsh
+╭chris:~/.oh-my-zsh %
+╰➤ gcreate rhel-8-v20210817 chriss-test-rh
+Configuration: qa-c
++gcreate:15> echo chriss-test-rh
++gcreate:15> gcloud compute instances create chriss-test-rh --labels 'owner=chriss' '--machine-type=n1-standard-4' '--subnet=default' '--network-tier=PREMIUM' '--maintenance-policy=MIGRATE' '--service-account=846065462912-compute@developer.gserviceaccount.com' '--scopes=https://www.googleapis.com/auth/devstorage.read_only,https://www.googleapis.com/auth/logging.write,https://www.googleapis.com/auth/monitoring.write,https://www.googleapis.com/auth/servicecontrol,https://www.googleapis.com/auth/service.management.readonly,https://www.googleapis.com/auth/trace.append' '--image=rhel-8-v20210817' '--image-project=rhel-cloud' '--boot-disk-size=200GB' '--boot-disk-type=pd-standard' --no-shielded-secure-boot --shielded-vtpm --shielded-integrity-monitoring '--reservation-affinity=any'
+Created [https://www.googleapis.com/compute/v1/projects/replicated-qa/zones/us-central1-c/instances/chriss-test-rh].
+WARNING: Some requests generated warnings:
+ - Disk size: '200 GB' is larger than image size: '20 GB'. You might need to resize the root repartition manually if the operating system does not support automatic resizing. See https://cloud.google.com/compute/docs/disks/add-persistent-disk#resize_pd for details.
+
+NAME            ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP   STATUS
+chriss-test-rh  us-central1-c  n1-standard-4               10.128.0.93  34.72.173.60  RUNNING
+
+╭chris:~/.oh-my-zsh %
+╰➤ glist
+Configuration: qa-c
+NAME            ZONE           MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP   STATUS
+chriss-test-rh  us-central1-c  n1-standard-4               10.128.0.93  34.72.173.60  RUNNING
+```
