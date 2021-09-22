@@ -7,15 +7,21 @@ Some commands to make working with gcloud easier.
 To manage environments use [configurations](https://cloud.google.com/sdk/docs/configurations).
 These scripts will not override the configurations you are in and will display the current configuration when run.
 
-Add the following to your `.zprofile`, replacing with your email user name.
+You will need to have gcloud installed, on macOS you can do this with [brew](https://formulae.brew.sh/cask/google-cloud-sdk) `brew install --cask google-cloud-sdk`
+
+You will need to set an environment variable GUSER to match your email user name. If you've used brew to install gcloud the configuration would be:
 
 ```zsh
-export GUSER=<replicated-email-user-name>
+# Configure gcommands plugin
+GUSER='chriss'
+
+# Setup gcloud commands
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 ```
 
-Note: You will need to have gcloud installed, on macOS you can do this with [brew](https://formulae.brew.sh/cask/google-cloud-sdk) `brew install --cask google-cloud-sdk`
-
 Example Usage:
+
 ```zsh
 ╭chris:~/.oh-my-zsh %
 ╰➤ gcreate rhel-8-v20210817 chriss-test-rh

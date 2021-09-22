@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if (( ! ${+commands[gcode]} ));then
-  print "gcode not installed, not loading replicated-gcommands plugin"
+if (( ! ${+commands[gcloud]} ));then
+  print "gcloud not installed, not loading replicated-gcommands plugin"
   return 1
 fi
 
