@@ -4,7 +4,7 @@ This repository aggregates [custom plugins](https://github.com/ohmyzsh/ohmyzsh/#
 
 Each plugin should be prefaced with `replicated-` to avoid unintentional overrides of other plugins. Additionally plugins should be focused, split unrelated items into individual plugins to allow users to choose which ones they want to enable.
 
-To install a plugin copy the plugin to your customer folder `~/.oh-my-zsh/custom/plugins` and enable it in your `~/.zshrc` plugin list. Ex:
+To install a plugin copy (or symlink!) the plugin to your custom folder `~/.oh-my-zsh/custom/plugins` and enable it in your `~/.zshrc` plugin list. Ex:
 
 ```zsh
 plugins=(
