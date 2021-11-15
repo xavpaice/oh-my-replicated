@@ -3,12 +3,12 @@
 # GUSER=
 
 if (( ! ${+commands[gcloud]} ));then
-  print "gcloud not installed, not loading replicated-gcommands plugin"
+  >&2 echo "gcloud not installed, not loading replicated-gcommands plugin"
   return 1
 fi
 
 genv() {
-  echo "Configuration: $(cat ~/.config/gcloud/active_config)"
+  >&2 echo "Configuration: $(cat ~/.config/gcloud/active_config)"
 }
 
 glist() {
