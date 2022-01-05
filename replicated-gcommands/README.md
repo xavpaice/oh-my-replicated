@@ -9,11 +9,14 @@ These scripts will not override the configurations you are in and will display t
 
 You will need to have gcloud installed, on macOS you can do this with [brew](https://formulae.brew.sh/cask/google-cloud-sdk) `brew install --cask google-cloud-sdk`
 
-You will need to set an environment variable GUSER to match your email user name. If you've used brew to install gcloud the configuration would be:
+You will need to set an environment variable `GUSER` to match your email user name. 
+You can optionally define a variable `GPREFIX` to prefix your instance names (generally the practice at Replicated is also to use your email user name).
+If you've used brew to install gcloud the configuration would be:
 
 ```zsh
 # Configure gcommands plugin
 GUSER='chriss'
+GPREFIX='chriss'
 
 # Setup gcloud commands
 source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
